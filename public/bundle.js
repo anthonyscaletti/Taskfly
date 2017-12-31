@@ -8492,9 +8492,9 @@ var _navigation = __webpack_require__(146);
 
 var _navigation2 = _interopRequireDefault(_navigation);
 
-var _categoryBox = __webpack_require__(289);
+var _trafficControl = __webpack_require__(289);
 
-var _categoryBox2 = _interopRequireDefault(_categoryBox);
+var _trafficControl2 = _interopRequireDefault(_trafficControl);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8520,25 +8520,7 @@ var Frontend = function (_React$Component) {
                 'div',
                 null,
                 _react2.default.createElement(_navigation2.default, null),
-                _react2.default.createElement(
-                    'div',
-                    { 'class': 'row' },
-                    _react2.default.createElement(
-                        'div',
-                        { 'class': 'col-md-4' },
-                        _react2.default.createElement(_categoryBox2.default, { categoryName: 'Tasks' })
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { 'class': 'col-md-4' },
-                        _react2.default.createElement(_categoryBox2.default, { categoryName: 'Working' })
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { 'class': 'col-md-4' },
-                        _react2.default.createElement(_categoryBox2.default, { categoryName: 'Completed' })
-                    )
-                )
+                _react2.default.createElement(_trafficControl2.default, null)
             );
         }
     }]);
@@ -38078,11 +38060,90 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _category = __webpack_require__(290);
+var _categoryBox = __webpack_require__(290);
+
+var _categoryBox2 = _interopRequireDefault(_categoryBox);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var TrafficControl = function (_React$Component) {
+    _inherits(TrafficControl, _React$Component);
+
+    function TrafficControl(props) {
+        _classCallCheck(this, TrafficControl);
+
+        var _this = _possibleConstructorReturn(this, (TrafficControl.__proto__ || Object.getPrototypeOf(TrafficControl)).call(this, props));
+
+        _this.state = {
+            tasks: [{ msg: "task 1", color: "yellow", status: 1 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }]
+        };
+        _this.handleClick = _this.handleClick.bind(_this);
+        return _this;
+    }
+
+    _createClass(TrafficControl, [{
+        key: 'handleClick',
+        value: function handleClick() {
+            this.setState({ tasks: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }] });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { 'class': 'row' },
+                _react2.default.createElement(
+                    'div',
+                    { 'class': 'col-md-4' },
+                    _react2.default.createElement(_categoryBox2.default, { categoryName: 'Tasks', handler: this.handleClick, tasks: this.state.tasks })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { 'class': 'col-md-4' },
+                    _react2.default.createElement(_categoryBox2.default, { categoryName: 'Working', handler: this.handleClick, tasks: this.state.tasks })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { 'class': 'col-md-4' },
+                    _react2.default.createElement(_categoryBox2.default, { categoryName: 'Completed', handler: this.handleClick, tasks: this.state.tasks })
+                )
+            );
+        }
+    }]);
+
+    return TrafficControl;
+}(_react2.default.Component);
+
+exports.default = TrafficControl;
+
+/***/ }),
+/* 290 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _category = __webpack_require__(291);
 
 var _category2 = _interopRequireDefault(_category);
 
-var _note = __webpack_require__(291);
+var _note = __webpack_require__(292);
 
 var _note2 = _interopRequireDefault(_note);
 
@@ -38100,12 +38161,7 @@ var CategoryBox = function (_React$Component) {
     function CategoryBox(props) {
         _classCallCheck(this, CategoryBox);
 
-        var _this = _possibleConstructorReturn(this, (CategoryBox.__proto__ || Object.getPrototypeOf(CategoryBox)).call(this, props));
-
-        _this.state = {
-            tasks: []
-        };
-        return _this;
+        return _possibleConstructorReturn(this, (CategoryBox.__proto__ || Object.getPrototypeOf(CategoryBox)).call(this, props));
     }
 
     _createClass(CategoryBox, [{
@@ -38120,23 +38176,23 @@ var CategoryBox = function (_React$Component) {
                     { className: 'row', style: { padding: "5%" } },
                     _react2.default.createElement(
                         'div',
-                        { className: 'col-md-3' },
-                        this.state.tasks[0]
+                        { className: 'col-md-3', onClick: this.props.handler },
+                        _react2.default.createElement(_note2.default, { message: this.props.tasks[0]["msg"], color: this.props.tasks[0]["color"], status: this.props.tasks[0]["status"] })
                     ),
                     _react2.default.createElement(
                         'div',
                         { className: 'col-md-3' },
-                        this.state.tasks[1]
+                        _react2.default.createElement(_note2.default, { message: this.props.tasks[1]["msg"], color: this.props.tasks[1]["color"], status: this.props.tasks[1]["status"] })
                     ),
                     _react2.default.createElement(
                         'div',
                         { className: 'col-md-3' },
-                        this.state.tasks[2]
+                        _react2.default.createElement(_note2.default, { message: this.props.tasks[2]["msg"], color: this.props.tasks[2]["color"], status: this.props.tasks[2]["status"] })
                     ),
                     _react2.default.createElement(
                         'div',
                         { className: 'col-md-3' },
-                        this.state.tasks[3]
+                        _react2.default.createElement(_note2.default, { message: this.props.tasks[3]["msg"], color: this.props.tasks[3]["color"], status: this.props.tasks[3]["status"] })
                     )
                 ),
                 _react2.default.createElement(
@@ -38145,22 +38201,22 @@ var CategoryBox = function (_React$Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'col-md-3' },
-                        this.state.tasks[4]
+                        _react2.default.createElement(_note2.default, { message: this.props.tasks[4]["msg"], color: this.props.tasks[4]["color"], status: this.props.tasks[4]["status"] })
                     ),
                     _react2.default.createElement(
                         'div',
                         { className: 'col-md-3' },
-                        this.state.tasks[5]
+                        _react2.default.createElement(_note2.default, { message: this.props.tasks[5]["msg"], color: this.props.tasks[5]["color"], status: this.props.tasks[5]["status"] })
                     ),
                     _react2.default.createElement(
                         'div',
                         { className: 'col-md-3' },
-                        this.state.tasks[6]
+                        _react2.default.createElement(_note2.default, { message: this.props.tasks[6]["msg"], color: this.props.tasks[6]["color"], status: this.props.tasks[6]["status"] })
                     ),
                     _react2.default.createElement(
                         'div',
                         { className: 'col-md-3' },
-                        this.state.tasks[7]
+                        _react2.default.createElement(_note2.default, { message: this.props.tasks[7]["msg"], color: this.props.tasks[7]["color"], status: this.props.tasks[7]["status"] })
                     )
                 )
             );
@@ -38173,7 +38229,7 @@ var CategoryBox = function (_React$Component) {
 exports.default = CategoryBox;
 
 /***/ }),
-/* 290 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38223,7 +38279,7 @@ var Category = function (_React$Component) {
 exports.default = Category;
 
 /***/ }),
-/* 291 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38264,6 +38320,14 @@ var Note = function (_React$Component) {
     }
 
     _createClass(Note, [{
+        key: 'componentWillReceiveProps',
+        value: function componentWillReceiveProps(nextProps) {
+            this.setState({ message: nextProps.message,
+                color: nextProps.color,
+                status: nextProps.status
+            });
+        }
+    }, {
         key: 'render',
         value: function render() {
             var style = { backgroundColor: this.state.color, color: 'black', width: '100%', height: '10vh', padding: '6%', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)' };
@@ -38274,7 +38338,7 @@ var Note = function (_React$Component) {
                     { style: style },
                     this.state.message
                 );
-            } else return "";
+            } else return _react2.default.createElement('div', { style: { backgroundColor: 'white', color: 'white', width: '100%', height: '10vh' } });
         }
     }]);
 

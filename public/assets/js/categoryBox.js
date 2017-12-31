@@ -6,9 +6,6 @@ class CategoryBox extends React.Component{
     constructor(props)
     {
         super(props);
-        this.state = {
-            tasks: []
-        }
     }
 
     render(){
@@ -16,31 +13,31 @@ class CategoryBox extends React.Component{
             <div style={{backgroundColor: 'white', borderStyle: 'solid', borderColor: 'yellow', height: '80vh'}}>
                 <Category name={this.props.categoryName} />
                 <div className="row" style={{padding: "5%"}}>
-                    <div className="col-md-3">
-                        {this.state.tasks[0]}
+                    <div className="col-md-3" onClick={this.props.handler}>
+                        <Note message={this.props.tasks[0]["msg"]} color={this.props.tasks[0]["color"]} status={this.props.tasks[0]["status"]} />
                     </div>
                     <div className="col-md-3">
-                        {this.state.tasks[1]}
+                        <Note message={this.props.tasks[1]["msg"]} color={this.props.tasks[1]["color"]} status={this.props.tasks[1]["status"]} />
                     </div>
                     <div className="col-md-3">
-                        {this.state.tasks[2]}
+                        <Note message={this.props.tasks[2]["msg"]} color={this.props.tasks[2]["color"]} status={this.props.tasks[2]["status"]} />
                     </div>
                     <div className="col-md-3">
-                        {this.state.tasks[3]}
+                        <Note message={this.props.tasks[3]["msg"]} color={this.props.tasks[3]["color"]} status={this.props.tasks[3]["status"]} />
                     </div>
                 </div>
                 <div className="row" style={{padding: "5%"}}>
                     <div className="col-md-3">
-                        {this.state.tasks[4]}
+                        <Note message={this.props.tasks[4]["msg"]} color={this.props.tasks[4]["color"]} status={this.props.tasks[4]["status"]} />
                     </div>
                     <div className="col-md-3">
-                        {this.state.tasks[5]}
+                        <Note message={this.props.tasks[5]["msg"]} color={this.props.tasks[5]["color"]} status={this.props.tasks[5]["status"]} />
                     </div>
                     <div className="col-md-3">
-                        {this.state.tasks[6]}
+                        <Note message={this.props.tasks[6]["msg"]} color={this.props.tasks[6]["color"]} status={this.props.tasks[6]["status"]} />
                     </div>
                     <div className="col-md-3">
-                        {this.state.tasks[7]}
+                        <Note message={this.props.tasks[7]["msg"]} color={this.props.tasks[7]["color"]} status={this.props.tasks[7]["status"]} />
                     </div>
                 </div>
             </div>
