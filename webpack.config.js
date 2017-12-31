@@ -1,26 +1,19 @@
-const path = require('path');
 
 module.exports = {
 
-    entry: path.resolve(__dirname, 'public/assets/') + '/index.js',
+    entry: './public/assets/js/frontend.js',
     output: {
-        path: path.resolve(__dirname, 'public/dist') + '/app',
-        filename: 'bundle.js',
-        publicPath: '/app/'
+        path: __dirname + '/public',
+        filename: 'bundle.js'
     },
     module: {
         loaders: [
             {
-                test: /\.js$/,
-                include: path.resolve(__dirname, 'public'),
+                exclude: /(node_modules)/,
                 loader: 'babel-loader',
                 query: {
                     presets: ['react', 'es2015']
                 }
-            },
-            {
-                test: /\.css$/,
-                loader: 'style-loader!css-loader'
             }
         ]
     }

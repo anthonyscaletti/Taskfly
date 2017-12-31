@@ -6,7 +6,7 @@ const runServer = require('./server/server');
 const app = express();
 app.set("view engine", "ejs");
 //Specify where the static files are located
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('public'));
 //Router engine
 router(app);
 //Run server
