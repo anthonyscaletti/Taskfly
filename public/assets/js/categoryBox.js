@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Category from './category';
+import Note from './note';
 
 class CategoryBox extends React.Component{
     constructor(props)
@@ -12,7 +13,7 @@ class CategoryBox extends React.Component{
 
     render(){
         return(
-            <div className="text-center" style={{backgroundColor: 'white', borderStyle: 'solid', borderColor: 'yellow', height: '80vh'}}>
+            <div style={{backgroundColor: 'white', borderStyle: 'solid', borderColor: 'yellow', height: '80vh'}}>
                 <Category name={this.props.categoryName} />
                 <div className="row" style={{padding: "5%"}}>
                     <div className="col-md-3">
