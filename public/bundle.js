@@ -38096,7 +38096,12 @@ var CategoryBox = function (_React$Component) {
     function CategoryBox(props) {
         _classCallCheck(this, CategoryBox);
 
-        return _possibleConstructorReturn(this, (CategoryBox.__proto__ || Object.getPrototypeOf(CategoryBox)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (CategoryBox.__proto__ || Object.getPrototypeOf(CategoryBox)).call(this, props));
+
+        _this.state = {
+            tasks: []
+        };
+        return _this;
     }
 
     _createClass(CategoryBox, [{
@@ -38105,7 +38110,55 @@ var CategoryBox = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'text-center', style: { backgroundColor: 'white', borderStyle: 'solid', borderColor: 'yellow', height: '80vh' } },
-                _react2.default.createElement(_category2.default, { name: this.props.categoryName })
+                _react2.default.createElement(_category2.default, { name: this.props.categoryName }),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'row', style: { padding: "5%" } },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'col-md-3' },
+                        this.state.tasks[0]
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'col-md-3' },
+                        this.state.tasks[1]
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'col-md-3' },
+                        this.state.tasks[2]
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'col-md-3' },
+                        this.state.tasks[3]
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'row', style: { padding: "5%" } },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'col-md-3' },
+                        this.state.tasks[4]
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'col-md-3' },
+                        this.state.tasks[5]
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'col-md-3' },
+                        this.state.tasks[6]
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'col-md-3' },
+                        this.state.tasks[7]
+                    )
+                )
             );
         }
     }]);
