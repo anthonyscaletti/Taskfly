@@ -3,20 +3,20 @@ import ReactDOM from 'react-dom';
 import Navigation from './navigation';
 import CategoryBox from './categoryBox';
 
-class Frontend extends Component{
+class Frontend extends React.Component{
     render(){
         return(
             <div>
                 <Navigation />
                 <div class="row">
                     <div class="col-md-4">
-                        <CategoryBox />
+                        <CategoryBox categoryName="Tasks" />
                     </div>
                     <div class="col-md-4">
-                        <CategoryBox />
+                        <CategoryBox categoryName="Working" />
                     </div>
                     <div class="col-md-4">
-                        <CategoryBox />
+                        <CategoryBox categoryName="Completed" />
                     </div>
                 </div>
             </div>
