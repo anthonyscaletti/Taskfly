@@ -38081,7 +38081,10 @@ var TrafficControl = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (TrafficControl.__proto__ || Object.getPrototypeOf(TrafficControl)).call(this, props));
 
         _this.state = {
-            tasks: [{ msg: "task 1", color: "yellow", status: 1 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }]
+            tasksStage1: [{ msg: "task 1", color: "yellow", status: 1 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }],
+            tasksStage2: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }],
+            tasksStage3: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }]
+
         };
         _this.handleClick = _this.handleClick.bind(_this);
         return _this;
@@ -38089,8 +38092,34 @@ var TrafficControl = function (_React$Component) {
 
     _createClass(TrafficControl, [{
         key: 'handleClick',
-        value: function handleClick() {
-            this.setState({ tasks: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }] });
+        value: function handleClick(index, category) {
+            var newState1 = this.state.tasksStage1;
+            var newState2 = this.state.tasksStage2;
+            var newState3 = this.state.tasksStage3;
+
+            if (category == "Tasks") {
+                newState1[index]["status"] = 0;
+                newState2[index]["status"] = 1;
+
+                this.setState({
+                    tasksStage1: newState1,
+                    tasksStage2: newState2
+                });
+            } else if (category == "Working") {
+                newState2[index]["status"] = 0;
+                newState3[index]["status"] = 1;
+
+                this.setState({
+                    tasksStage2: newState2,
+                    tasksStage3: newState3
+                });
+            } else {
+                newState3[index]["status"] = 0;
+
+                this.setState({
+                    tasksStage3: newState3
+                });
+            }
         }
     }, {
         key: 'render',
@@ -38101,17 +38130,17 @@ var TrafficControl = function (_React$Component) {
                 _react2.default.createElement(
                     'div',
                     { 'class': 'col-md-4' },
-                    _react2.default.createElement(_categoryBox2.default, { categoryName: 'Tasks', handler: this.handleClick, tasks: this.state.tasks })
+                    _react2.default.createElement(_categoryBox2.default, { categoryName: 'Tasks', handler: this.handleClick, tasks: this.state.tasksStage1 })
                 ),
                 _react2.default.createElement(
                     'div',
                     { 'class': 'col-md-4' },
-                    _react2.default.createElement(_categoryBox2.default, { categoryName: 'Working', handler: this.handleClick, tasks: this.state.tasks })
+                    _react2.default.createElement(_categoryBox2.default, { categoryName: 'Working', handler: this.handleClick, tasks: this.state.tasksStage2 })
                 ),
                 _react2.default.createElement(
                     'div',
                     { 'class': 'col-md-4' },
-                    _react2.default.createElement(_categoryBox2.default, { categoryName: 'Completed', handler: this.handleClick, tasks: this.state.tasks })
+                    _react2.default.createElement(_categoryBox2.default, { categoryName: 'Completed', handler: this.handleClick, tasks: this.state.tasksStage3 })
                 )
             );
         }
@@ -38167,6 +38196,8 @@ var CategoryBox = function (_React$Component) {
     _createClass(CategoryBox, [{
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             return _react2.default.createElement(
                 'div',
                 { style: { backgroundColor: 'white', borderStyle: 'solid', borderColor: 'yellow', height: '80vh' } },
@@ -38176,22 +38207,30 @@ var CategoryBox = function (_React$Component) {
                     { className: 'row', style: { padding: "5%" } },
                     _react2.default.createElement(
                         'div',
-                        { className: 'col-md-3', onClick: this.props.handler },
+                        { className: 'col-md-3', onClick: function onClick() {
+                                return _this2.props.handler(0, _this2.props.categoryName);
+                            } },
                         _react2.default.createElement(_note2.default, { message: this.props.tasks[0]["msg"], color: this.props.tasks[0]["color"], status: this.props.tasks[0]["status"] })
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'col-md-3' },
+                        { className: 'col-md-3', onClick: function onClick() {
+                                return _this2.props.handler(1, _this2.props.categoryName);
+                            } },
                         _react2.default.createElement(_note2.default, { message: this.props.tasks[1]["msg"], color: this.props.tasks[1]["color"], status: this.props.tasks[1]["status"] })
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'col-md-3' },
+                        { className: 'col-md-3', onClick: function onClick() {
+                                return _this2.props.handler(2, _this2.props.categoryName);
+                            } },
                         _react2.default.createElement(_note2.default, { message: this.props.tasks[2]["msg"], color: this.props.tasks[2]["color"], status: this.props.tasks[2]["status"] })
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'col-md-3' },
+                        { className: 'col-md-3', onClick: function onClick() {
+                                return _this2.props.handler(3, _this2.props.categoryName);
+                            } },
                         _react2.default.createElement(_note2.default, { message: this.props.tasks[3]["msg"], color: this.props.tasks[3]["color"], status: this.props.tasks[3]["status"] })
                     )
                 ),
@@ -38200,22 +38239,30 @@ var CategoryBox = function (_React$Component) {
                     { className: 'row', style: { padding: "5%" } },
                     _react2.default.createElement(
                         'div',
-                        { className: 'col-md-3' },
+                        { className: 'col-md-3', onClick: function onClick() {
+                                return _this2.props.handler(4, _this2.props.categoryName);
+                            } },
                         _react2.default.createElement(_note2.default, { message: this.props.tasks[4]["msg"], color: this.props.tasks[4]["color"], status: this.props.tasks[4]["status"] })
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'col-md-3' },
+                        { className: 'col-md-3', onClick: function onClick() {
+                                return _this2.props.handler(5, _this2.props.categoryName);
+                            } },
                         _react2.default.createElement(_note2.default, { message: this.props.tasks[5]["msg"], color: this.props.tasks[5]["color"], status: this.props.tasks[5]["status"] })
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'col-md-3' },
+                        { className: 'col-md-3', onClick: function onClick() {
+                                return _this2.props.handler(6, _this2.props.categoryName);
+                            } },
                         _react2.default.createElement(_note2.default, { message: this.props.tasks[6]["msg"], color: this.props.tasks[6]["color"], status: this.props.tasks[6]["status"] })
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'col-md-3' },
+                        { className: 'col-md-3', onClick: function onClick() {
+                                return _this2.props.handler(7, _this2.props.categoryName);
+                            } },
                         _react2.default.createElement(_note2.default, { message: this.props.tasks[7]["msg"], color: this.props.tasks[7]["color"], status: this.props.tasks[7]["status"] })
                     )
                 )
