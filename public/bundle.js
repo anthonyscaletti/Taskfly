@@ -8819,6 +8819,8 @@ var AddTask = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             return _react2.default.createElement(
                 'div',
                 { className: 'row' },
@@ -8827,7 +8829,7 @@ var AddTask = function (_React$Component) {
                     { className: 'col-md-4 col-md-offset-4' },
                     _react2.default.createElement(
                         'div',
-                        { style: { backgroundColor: 'white', borderStyle: 'solid', borderColor: '#CD9932', marginBottom: '5%', padding: '2%' } },
+                        { style: { backgroundColor: 'white', borderStyle: 'solid', borderColor: '#D2A347', marginBottom: '5%', padding: '2%' } },
                         _react2.default.createElement(
                             _reactBootstrap.Form,
                             null,
@@ -8836,11 +8838,11 @@ var AddTask = function (_React$Component) {
                                 { controlId: 'taskMessage' },
                                 _react2.default.createElement(
                                     _reactBootstrap.ControlLabel,
-                                    { style: { color: 'purple' } },
+                                    { className: 'romanText', style: { color: 'purple' } },
                                     'Add Task'
                                 ),
                                 ' ',
-                                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Write your task here', onChange: this.handleMsgInp })
+                                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', className: 'romanText', placeholder: 'Write your task here', onChange: this.handleMsgInp })
                             ),
                             ' ',
                             _react2.default.createElement(
@@ -8848,7 +8850,7 @@ var AddTask = function (_React$Component) {
                                 { controlId: 'taskColor' },
                                 _react2.default.createElement(
                                     _reactBootstrap.ControlLabel,
-                                    { style: { color: 'purple' } },
+                                    { className: 'romanText', style: { color: 'purple' } },
                                     'Select Color'
                                 ),
                                 ' ',
@@ -8860,33 +8862,33 @@ var AddTask = function (_React$Component) {
                                         { type: 'radio', name: 'options', defaultValue: 'yellow' },
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { value: 'yellow', onChange: this.handleColorInp, style: { color: 'purple' } },
+                                            { className: 'romanText', value: 'yellow', onChange: this.handleColorInp, style: { color: 'purple' } },
                                             'Yellow'
                                         ),
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { value: 'orange', onChange: this.handleColorInp, style: { color: 'purple' } },
+                                            { className: 'romanText', value: 'orange', onChange: this.handleColorInp, style: { color: 'purple' } },
                                             'Orange'
                                         ),
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { value: 'green', onChange: this.handleColorInp, style: { color: 'purple' } },
+                                            { className: 'romanText', value: '#98FB98', onChange: this.handleColorInp, style: { color: 'purple' } },
                                             'Green'
                                         ),
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { value: 'blue', onChange: this.handleColorInp, style: { color: 'purple' } },
-                                            'blue'
+                                            { className: 'romanText', value: '#ADD8E6', onChange: this.handleColorInp, style: { color: 'purple' } },
+                                            'Blue'
                                         ),
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { value: 'red', onChange: this.handleColorInp, style: { color: 'purple' } },
-                                            'red'
+                                            { className: 'romanText', value: '#DA70D6', onChange: this.handleColorInp, style: { color: 'purple' } },
+                                            'Purple'
                                         ),
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { value: 'pink', onChange: this.handleColorInp, style: { color: 'purple' } },
-                                            'pink'
+                                            { className: 'romanText', value: 'pink', onChange: this.handleColorInp, style: { color: 'purple' } },
+                                            'Pink'
                                         )
                                     )
                                 )
@@ -8894,7 +8896,9 @@ var AddTask = function (_React$Component) {
                             ' ',
                             _react2.default.createElement(
                                 _reactBootstrap.Button,
-                                { block: 'true', onClick: this.props.getTaskData, style: { color: 'purple' } },
+                                { block: 'true', onClick: function onClick() {
+                                        return _this2.props.getTaskData(_this2.state.msg, _this2.state.color);
+                                    }, style: { color: 'purple' } },
                                 'Add'
                             )
                         )
@@ -26281,58 +26285,45 @@ var Navigation = function (_Component) {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                'div',
-                null,
+                _reactBootstrap.Navbar,
+                { style: { backgroundColor: '#D2A347' }, fluid: 'true' },
                 _react2.default.createElement(
-                    _reactBootstrap.Navbar,
-                    { style: { backgroundColor: '#CD9932' } },
+                    _reactBootstrap.Navbar.Header,
+                    null,
                     _react2.default.createElement(
-                        _reactBootstrap.Navbar.Header,
+                        _reactBootstrap.Navbar.Brand,
+                        null,
+                        _react2.default.createElement('img', { id: 'logoNav', src: './assets/logo.png', alt: 'logo' })
+                    ),
+                    _react2.default.createElement(
+                        _reactBootstrap.Navbar.Brand,
                         null,
                         _react2.default.createElement(
-                            _reactBootstrap.Navbar.Brand,
-                            null,
-                            _react2.default.createElement('img', { id: 'logoNav', src: './assets/logo.png', alt: 'logo' })
-                        ),
+                            'span',
+                            { className: 'romanHeader', style: { color: 'purple' } },
+                            'Taskfly'
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    _reactBootstrap.Nav,
+                    { pullRight: true },
+                    _react2.default.createElement(
+                        _reactBootstrap.NavItem,
+                        { onClick: this.props.resetTasks },
                         _react2.default.createElement(
-                            _reactBootstrap.Navbar.Brand,
-                            null,
-                            _react2.default.createElement(
-                                'span',
-                                { style: { color: 'purple' } },
-                                'Taskfly'
-                            )
+                            'span',
+                            { className: 'romanNavItems', style: { color: 'purple' } },
+                            'Reset'
                         )
                     ),
                     _react2.default.createElement(
-                        _reactBootstrap.Nav,
-                        { pullRight: true },
+                        _reactBootstrap.NavItem,
+                        { onClick: this.props.addTask },
                         _react2.default.createElement(
-                            _reactBootstrap.NavItem,
-                            { eventKey: 1, href: '#' },
-                            _react2.default.createElement(
-                                'span',
-                                { style: { color: 'purple' } },
-                                'New'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            _reactBootstrap.NavItem,
-                            { eventKey: 2, onClick: this.props.resetTasks },
-                            _react2.default.createElement(
-                                'span',
-                                { style: { color: 'purple' } },
-                                'Reset'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            _reactBootstrap.NavItem,
-                            { eventKey: 3, onClick: this.props.addTask },
-                            _react2.default.createElement(
-                                'span',
-                                { style: { color: 'purple' } },
-                                'Add Task'
-                            )
+                            'span',
+                            { className: 'romanNavItems', style: { color: 'purple' } },
+                            'Add Task'
                         )
                     )
                 )
@@ -38266,14 +38257,15 @@ var TrafficControl = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (TrafficControl.__proto__ || Object.getPrototypeOf(TrafficControl)).call(this, props));
 
         _this.state = {
-            tasksStage1: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }],
-            tasksStage2: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }],
-            tasksStage3: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }],
+            tasksStage1: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }, { msg: "task 9", color: "yellow", status: 0 }],
+            tasksStage2: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }, { msg: "task 9", color: "yellow", status: 0 }],
+            tasksStage3: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }, { msg: "task 9", color: "yellow", status: 0 }],
             addition: props.addition,
             reset: props.reset
 
         };
         _this.handleClick = _this.handleClick.bind(_this);
+        _this.getTaskData = _this.getTaskData.bind(_this);
         return _this;
     }
 
@@ -38284,9 +38276,9 @@ var TrafficControl = function (_React$Component) {
 
             if (nextProps.reset == 1) {
                 this.setState({
-                    tasksStage1: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }],
-                    tasksStage2: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }],
-                    tasksStage3: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }]
+                    tasksStage1: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }, { msg: "task 9", color: "yellow", status: 0 }],
+                    tasksStage2: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }, { msg: "task 9", color: "yellow", status: 0 }],
+                    tasksStage3: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }, { msg: "task 9", color: "yellow", status: 0 }]
                 });
             }
         }
@@ -38299,23 +38291,55 @@ var TrafficControl = function (_React$Component) {
 
             if (category == "Tasks") {
                 if (newState1[index]["status"]) {
-                    newState1[index]["status"] = 0;
-                    newState2[index]["status"] = 1;
+                    var tasksFull = true;
+                    var i;
 
-                    this.setState({
-                        tasksStage1: newState1,
-                        tasksStage2: newState2
-                    });
+                    for (i = 0; i < newState2.length; ++i) {
+                        if (newState2[i]["status"] == 0) {
+                            newState2[i]["msg"] = newState1[index]["msg"];
+                            newState2[i]["color"] = newState1[index]["color"];
+                            newState2[i]["status"] = 1;
+                            tasksFull = false;
+                            break;
+                        }
+                    }
+
+                    if (tasksFull) {
+                        alert("Working on Too Many Tasks Already");
+                    } else {
+                        newState1[index]["status"] = 0;
+
+                        this.setState({
+                            tasksStage1: newState1,
+                            tasksStage2: newState2
+                        });
+                    }
                 }
             } else if (category == "Working") {
                 if (newState2[index]["status"]) {
-                    newState2[index]["status"] = 0;
-                    newState3[index]["status"] = 1;
+                    var tasksFull = true;
+                    var i;
 
-                    this.setState({
-                        tasksStage2: newState2,
-                        tasksStage3: newState3
-                    });
+                    for (i = 0; i < newState3.length; ++i) {
+                        if (newState3[i]["status"] == 0) {
+                            newState3[i]["msg"] = newState2[index]["msg"];
+                            newState3[i]["color"] = newState2[index]["color"];
+                            newState3[i]["status"] = 1;
+                            tasksFull = false;
+                            break;
+                        }
+                    }
+
+                    if (tasksFull) {
+                        alert("Delete a Completed Task");
+                    } else {
+                        newState2[index]["status"] = 0;
+
+                        this.setState({
+                            tasksStage2: newState2,
+                            tasksStage3: newState3
+                        });
+                    }
                 }
             } else {
                 if (newState3[index]["status"]) {
@@ -38325,6 +38349,35 @@ var TrafficControl = function (_React$Component) {
                         tasksStage3: newState3
                     });
                 }
+            }
+        }
+    }, {
+        key: 'getTaskData',
+        value: function getTaskData(msg, color) {
+            var newState1 = this.state.tasksStage1;
+            var tasksFull = true;
+            var i;
+
+            if (msg.length > 126) {
+                alert("Task Description Too Long, Has Been Sliced in PostIt");
+                msg = msg.substr(0, 126);
+            }
+
+            for (i = 0; i < newState1.length; ++i) {
+                if (newState1[i]["status"] == 0) {
+                    newState1[i]["msg"] = msg;
+                    newState1[i]["color"] = color;
+                    newState1[i]["status"] = 1;
+                    tasksFull = false;
+                    break;
+                }
+            }
+            if (tasksFull) {
+                alert("Task List is Full");
+            } else {
+                this.setState({
+                    taskStage1: newState1
+                });
             }
         }
     }, {
@@ -38355,7 +38408,7 @@ var TrafficControl = function (_React$Component) {
                     )
                 );
             } else {
-                return _react2.default.createElement(_addTask2.default, null);
+                return _react2.default.createElement(_addTask2.default, { getTaskData: this.getTaskData });
             }
         }
     }]);
@@ -38414,7 +38467,7 @@ var CategoryBox = function (_React$Component) {
 
             return _react2.default.createElement(
                 'div',
-                { style: { backgroundColor: 'white', borderStyle: 'solid', borderColor: '#CD9932', height: '80vh' } },
+                { style: { backgroundColor: 'white', borderStyle: 'solid', borderColor: '#D2A347', height: '80vh' } },
                 _react2.default.createElement(_category2.default, { name: this.props.categoryName }),
                 _react2.default.createElement(
                     'div',
@@ -38464,6 +38517,31 @@ var CategoryBox = function (_React$Component) {
                                 return _this2.props.handler(5, _this2.props.categoryName);
                             } },
                         _react2.default.createElement(_note2.default, { message: this.props.tasks[5]["msg"], color: this.props.tasks[5]["color"], status: this.props.tasks[5]["status"] })
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'row', style: { padding: "5%" } },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'col-md-4', onClick: function onClick() {
+                                return _this2.props.handler(6, _this2.props.categoryName);
+                            } },
+                        _react2.default.createElement(_note2.default, { message: this.props.tasks[6]["msg"], color: this.props.tasks[6]["color"], status: this.props.tasks[6]["status"] })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'col-md-4', onClick: function onClick() {
+                                return _this2.props.handler(7, _this2.props.categoryName);
+                            } },
+                        _react2.default.createElement(_note2.default, { message: this.props.tasks[7]["msg"], color: this.props.tasks[7]["color"], status: this.props.tasks[7]["status"] })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'col-md-4', onClick: function onClick() {
+                                return _this2.props.handler(8, _this2.props.categoryName);
+                            } },
+                        _react2.default.createElement(_note2.default, { message: this.props.tasks[8]["msg"], color: this.props.tasks[8]["color"], status: this.props.tasks[8]["status"] })
                     )
                 )
             );
@@ -38515,7 +38593,11 @@ var Category = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'text-center', style: { backgroundColor: 'white', borderStyle: 'solid', borderColor: 'purple', color: 'purple' } },
-                this.props.name
+                _react2.default.createElement(
+                    'span',
+                    { className: 'romanCategory' },
+                    this.props.name
+                )
             );
         }
     }]);
@@ -38577,13 +38659,17 @@ var Note = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            var style = { backgroundColor: this.state.color, color: 'black', width: '100%', height: '15vh', padding: '6%', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)' };
+            var style = { backgroundColor: this.state.color, color: 'black', width: '100%', height: '15vh', padding: '6%', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)', overflowWrap: 'break-word' };
 
             if (this.state.status == 1) {
                 return _react2.default.createElement(
                     'div',
                     { style: style },
-                    this.state.message
+                    _react2.default.createElement(
+                        'span',
+                        { className: 'romanText' },
+                        this.state.message
+                    )
                 );
             } else return _react2.default.createElement('div', { style: { backgroundColor: 'white', color: 'white', width: '100%', height: '15vh' } });
         }

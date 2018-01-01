@@ -12,27 +12,37 @@ class TrafficControl extends React.Component{
                           {msg: "task 3", color: "yellow", status: 0},
                           {msg: "task 4", color: "yellow", status: 0},
                           {msg: "task 5", color: "yellow", status: 0},
-                          {msg: "task 6", color: "yellow", status: 0}
+                          {msg: "task 6", color: "yellow", status: 0},
+                          {msg: "task 7", color: "yellow", status: 0},
+                          {msg: "task 8", color: "yellow", status: 0},
+                          {msg: "task 9", color: "yellow", status: 0}
                          ],
             tasksStage2: [{msg: "task 1", color: "yellow", status: 0},
                           {msg: "task 2", color: "yellow", status: 0},
                           {msg: "task 3", color: "yellow", status: 0},
                           {msg: "task 4", color: "yellow", status: 0},
                           {msg: "task 5", color: "yellow", status: 0},
-                          {msg: "task 6", color: "yellow", status: 0}
+                          {msg: "task 6", color: "yellow", status: 0},
+                          {msg: "task 7", color: "yellow", status: 0},
+                          {msg: "task 8", color: "yellow", status: 0},
+                          {msg: "task 9", color: "yellow", status: 0}
                          ],
             tasksStage3: [{msg: "task 1", color: "yellow", status: 0},
                           {msg: "task 2", color: "yellow", status: 0},
                           {msg: "task 3", color: "yellow", status: 0},
                           {msg: "task 4", color: "yellow", status: 0},
                           {msg: "task 5", color: "yellow", status: 0},
-                          {msg: "task 6", color: "yellow", status: 0}
+                          {msg: "task 6", color: "yellow", status: 0},
+                          {msg: "task 7", color: "yellow", status: 0},
+                          {msg: "task 8", color: "yellow", status: 0},
+                          {msg: "task 9", color: "yellow", status: 0}
                          ],
             addition: props.addition,
             reset: props.reset
 
         }
         this.handleClick = this.handleClick.bind(this);
+        this.getTaskData = this.getTaskData.bind(this);
     }
 
     componentWillReceiveProps(nextProps){
@@ -46,21 +56,30 @@ class TrafficControl extends React.Component{
                               {msg: "task 3", color: "yellow", status: 0},
                               {msg: "task 4", color: "yellow", status: 0},
                               {msg: "task 5", color: "yellow", status: 0},
-                              {msg: "task 6", color: "yellow", status: 0}
+                              {msg: "task 6", color: "yellow", status: 0},
+                              {msg: "task 7", color: "yellow", status: 0},
+                              {msg: "task 8", color: "yellow", status: 0},
+                              {msg: "task 9", color: "yellow", status: 0}
                              ],
                 tasksStage2: [{msg: "task 1", color: "yellow", status: 0},
                               {msg: "task 2", color: "yellow", status: 0},
                               {msg: "task 3", color: "yellow", status: 0},
                               {msg: "task 4", color: "yellow", status: 0},
                               {msg: "task 5", color: "yellow", status: 0},
-                              {msg: "task 6", color: "yellow", status: 0}
+                              {msg: "task 6", color: "yellow", status: 0},
+                              {msg: "task 7", color: "yellow", status: 0},
+                              {msg: "task 8", color: "yellow", status: 0},
+                              {msg: "task 9", color: "yellow", status: 0}
                              ],
                 tasksStage3: [{msg: "task 1", color: "yellow", status: 0},
                               {msg: "task 2", color: "yellow", status: 0},
                               {msg: "task 3", color: "yellow", status: 0},
                               {msg: "task 4", color: "yellow", status: 0},
                               {msg: "task 5", color: "yellow", status: 0},
-                              {msg: "task 6", color: "yellow", status: 0}
+                              {msg: "task 6", color: "yellow", status: 0},
+                              {msg: "task 7", color: "yellow", status: 0},
+                              {msg: "task 8", color: "yellow", status: 0},
+                              {msg: "task 9", color: "yellow", status: 0}
                              ]
             });
         }
@@ -75,26 +94,66 @@ class TrafficControl extends React.Component{
         {
             if(newState1[index]["status"])
             {
-                newState1[index]["status"] = 0;
-                newState2[index]["status"] = 1;
+                var tasksFull = true;
+                var i;
 
-                this.setState({
-                    tasksStage1: newState1,
-                    tasksStage2: newState2
-                });
+                for(i = 0; i < newState2.length; ++i){
+                    if(newState2[i]["status"] == 0)
+                    {
+                        newState2[i]["msg"] = newState1[index]["msg"];
+                        newState2[i]["color"] = newState1[index]["color"];
+                        newState2[i]["status"] = 1;
+                        tasksFull = false;
+                        break;
+                    }
+                }
+
+                if(tasksFull)
+                {
+                    alert("Working on Too Many Tasks Already")
+                }
+                else
+                {
+                    newState1[index]["status"] = 0;
+
+                    this.setState({
+                        tasksStage1: newState1,
+                        tasksStage2: newState2
+                    });
+                }
             }
         }
         else if (category == "Working")
         {
             if(newState2[index]["status"])
             {
-                newState2[index]["status"] = 0;
-                newState3[index]["status"] = 1;
+                var tasksFull = true;
+                var i;
 
-                this.setState({
-                    tasksStage2: newState2,
-                    tasksStage3: newState3
-                });
+                for(i = 0; i < newState3.length; ++i){
+                    if(newState3[i]["status"] == 0)
+                    {
+                        newState3[i]["msg"] = newState2[index]["msg"];
+                        newState3[i]["color"] = newState2[index]["color"];
+                        newState3[i]["status"] = 1;
+                        tasksFull = false;
+                        break;
+                    }
+                }
+
+                if(tasksFull)
+                {
+                    alert("Delete a Completed Task")
+                }
+                else
+                {
+                    newState2[index]["status"] = 0;
+
+                    this.setState({
+                        tasksStage2: newState2,
+                        tasksStage3: newState3
+                    });
+                }
             }
         }
         else
@@ -109,6 +168,42 @@ class TrafficControl extends React.Component{
             }
         }
     }
+
+    getTaskData(msg, color)
+    {
+        var newState1 = this.state.tasksStage1;
+        var tasksFull = true;
+        var i;
+
+        if(msg.length > 126)
+        {
+            alert("Task Description Too Long, Has Been Sliced in PostIt");
+            msg = msg.substr(0,126);
+        }
+
+        for(i = 0; i < newState1.length; ++i){
+            if(newState1[i]["status"] == 0)
+            {
+                newState1[i]["msg"] = msg;
+                newState1[i]["color"] = color;
+                newState1[i]["status"] = 1;
+                tasksFull = false;
+                break;
+            }
+        }
+        if(tasksFull)
+        {
+            alert("Task List is Full")
+        }
+        else
+        {
+            this.setState({
+                taskStage1: newState1
+            });
+        }
+
+    }
+
     render()
     {
         if(this.state.addition == 0)
@@ -132,7 +227,7 @@ class TrafficControl extends React.Component{
         else
         {
             return(
-                <AddTask />
+                <AddTask getTaskData={this.getTaskData}/>
             );
         }
     }

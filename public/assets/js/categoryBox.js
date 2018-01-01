@@ -10,7 +10,7 @@ class CategoryBox extends React.Component{
 
     render(){
         return(
-            <div style={{backgroundColor: 'white', borderStyle: 'solid', borderColor: '#CD9932', height: '80vh'}}>
+            <div style={{backgroundColor: 'white', borderStyle: 'solid', borderColor: '#D2A347', height: '80vh'}}>
                 <Category name={this.props.categoryName} />
                 <div className="row" style={{padding: "5%"}}>
                     <div className="col-md-4" onClick={() => this.props.handler(0, this.props.categoryName)}>
@@ -32,6 +32,17 @@ class CategoryBox extends React.Component{
                     </div>
                     <div className="col-md-4" onClick={() => this.props.handler(5, this.props.categoryName)}>
                         <Note message={this.props.tasks[5]["msg"]} color={this.props.tasks[5]["color"]} status={this.props.tasks[5]["status"]} />
+                    </div>
+                </div>
+                <div className="row" style={{padding: "5%"}}>
+                    <div className="col-md-4" onClick={() => this.props.handler(6, this.props.categoryName)}>
+                        <Note message={this.props.tasks[6]["msg"]} color={this.props.tasks[6]["color"]} status={this.props.tasks[6]["status"]} />
+                    </div>
+                    <div className="col-md-4" onClick={() => this.props.handler(7, this.props.categoryName)}>
+                        <Note message={this.props.tasks[7]["msg"]} color={this.props.tasks[7]["color"]} status={this.props.tasks[7]["status"]} />
+                    </div>
+                    <div className="col-md-4" onClick={() => this.props.handler(8, this.props.categoryName)}>
+                        <Note message={this.props.tasks[8]["msg"]} color={this.props.tasks[8]["color"]} status={this.props.tasks[8]["status"]} />
                     </div>
                 </div>
             </div>
