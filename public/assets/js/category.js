@@ -8,7 +8,7 @@ class Category extends React.Component{
     render(){
         return(
             <div className="text-center" style={{backgroundColor: 'white', borderStyle: 'solid', borderColor: 'purple', color: 'purple'}}>
-                {this.props.name}
+                <span className="romanCategory">{this.props.name}</span>
             </div>
         );
     }

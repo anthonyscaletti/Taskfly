@@ -25,7 +25,7 @@ class Note extends React.Component{
         {
             return(
                 <div style={style}>
-                    {this.state.message}
+                    <span className="romanText">{this.state.message}</span>
                 </div>
             );
         }

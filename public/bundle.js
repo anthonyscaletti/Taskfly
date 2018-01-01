@@ -8838,11 +8838,11 @@ var AddTask = function (_React$Component) {
                                 { controlId: 'taskMessage' },
                                 _react2.default.createElement(
                                     _reactBootstrap.ControlLabel,
-                                    { style: { color: 'purple' } },
+                                    { className: 'romanText', style: { color: 'purple' } },
                                     'Add Task'
                                 ),
                                 ' ',
-                                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Write your task here', onChange: this.handleMsgInp })
+                                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', className: 'romanText', placeholder: 'Write your task here', onChange: this.handleMsgInp })
                             ),
                             ' ',
                             _react2.default.createElement(
@@ -8850,7 +8850,7 @@ var AddTask = function (_React$Component) {
                                 { controlId: 'taskColor' },
                                 _react2.default.createElement(
                                     _reactBootstrap.ControlLabel,
-                                    { style: { color: 'purple' } },
+                                    { className: 'romanText', style: { color: 'purple' } },
                                     'Select Color'
                                 ),
                                 ' ',
@@ -8862,33 +8862,33 @@ var AddTask = function (_React$Component) {
                                         { type: 'radio', name: 'options', defaultValue: 'yellow' },
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { value: 'yellow', onChange: this.handleColorInp, style: { color: 'purple' } },
+                                            { className: 'romanText', value: 'yellow', onChange: this.handleColorInp, style: { color: 'purple' } },
                                             'Yellow'
                                         ),
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { value: 'orange', onChange: this.handleColorInp, style: { color: 'purple' } },
+                                            { className: 'romanText', value: 'orange', onChange: this.handleColorInp, style: { color: 'purple' } },
                                             'Orange'
                                         ),
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { value: 'green', onChange: this.handleColorInp, style: { color: 'purple' } },
+                                            { className: 'romanText', value: '#98FB98', onChange: this.handleColorInp, style: { color: 'purple' } },
                                             'Green'
                                         ),
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { value: 'blue', onChange: this.handleColorInp, style: { color: 'purple' } },
-                                            'blue'
+                                            { className: 'romanText', value: '#ADD8E6', onChange: this.handleColorInp, style: { color: 'purple' } },
+                                            'Blue'
                                         ),
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { value: 'red', onChange: this.handleColorInp, style: { color: 'purple' } },
-                                            'red'
+                                            { className: 'romanText', value: '#DA70D6', onChange: this.handleColorInp, style: { color: 'purple' } },
+                                            'Purple'
                                         ),
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { value: 'pink', onChange: this.handleColorInp, style: { color: 'purple' } },
-                                            'pink'
+                                            { className: 'romanText', value: 'pink', onChange: this.handleColorInp, style: { color: 'purple' } },
+                                            'Pink'
                                         )
                                     )
                                 )
@@ -26300,7 +26300,7 @@ var Navigation = function (_Component) {
                         null,
                         _react2.default.createElement(
                             'span',
-                            { style: { color: 'purple' } },
+                            { className: 'romanHeader', style: { color: 'purple' } },
                             'Taskfly'
                         )
                     )
@@ -26313,7 +26313,7 @@ var Navigation = function (_Component) {
                         { onClick: this.props.resetTasks },
                         _react2.default.createElement(
                             'span',
-                            { style: { color: 'purple' } },
+                            { className: 'romanNavItems', style: { color: 'purple' } },
                             'Reset'
                         )
                     ),
@@ -26322,7 +26322,7 @@ var Navigation = function (_Component) {
                         { onClick: this.props.addTask },
                         _react2.default.createElement(
                             'span',
-                            { style: { color: 'purple' } },
+                            { className: 'romanNavItems', style: { color: 'purple' } },
                             'Add Task'
                         )
                     )
@@ -38593,7 +38593,11 @@ var Category = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'text-center', style: { backgroundColor: 'white', borderStyle: 'solid', borderColor: 'purple', color: 'purple' } },
-                this.props.name
+                _react2.default.createElement(
+                    'span',
+                    { className: 'romanCategory' },
+                    this.props.name
+                )
             );
         }
     }]);
@@ -38661,7 +38665,11 @@ var Note = function (_React$Component) {
                 return _react2.default.createElement(
                     'div',
                     { style: style },
-                    this.state.message
+                    _react2.default.createElement(
+                        'span',
+                        { className: 'romanText' },
+                        this.state.message
+                    )
                 );
             } else return _react2.default.createElement('div', { style: { backgroundColor: 'white', color: 'white', width: '100%', height: '15vh' } });
         }
