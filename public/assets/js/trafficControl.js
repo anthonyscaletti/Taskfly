@@ -43,7 +43,7 @@ class TrafficControl extends React.Component{
 
     componentWillReceiveProps(nextProps){
         this.setState({addition: nextProps.addition, reset: nextProps.reset});
-    
+
         if(nextProps.reset == 1)
         {
             this.setState({

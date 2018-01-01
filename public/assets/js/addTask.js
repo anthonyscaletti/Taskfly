@@ -26,30 +26,30 @@ class AddTask extends React.Component{
         return(
             <div className="row">
                 <div className="col-md-4 col-md-offset-4">
-                    <div style={{backgroundColor: 'white', borderStyle: 'solid', borderColor: 'green', marginBottom: '5%', padding: '2%'}}>
+                    <div style={{backgroundColor: 'white', borderStyle: 'solid', borderColor: '#CD9932', marginBottom: '5%', padding: '2%'}}>
                         <Form>
                             <FormGroup controlId="taskMessage">
-                                <ControlLabel>Add Task</ControlLabel>
+                                <ControlLabel style={{color: 'purple'}}>Add Task</ControlLabel>
                                 {' '}
                                 <FormControl type="text" placeholder="Write your task here" onChange={this.handleMsgInp}/>
                             </FormGroup>
                             {' '}
                             <FormGroup controlId="taskColor">
-                                <ControlLabel>Select Color</ControlLabel>
+                                <ControlLabel style={{color: 'purple'}}>Select Color</ControlLabel>
                                 {' '}
                                 <ButtonToolbar>
                                     <ToggleButtonGroup type="radio" name="options" defaultValue="yellow">
-                                        <ToggleButton value="yellow" onChange={this.handleColorInp}>Yellow</ToggleButton>
-                                        <ToggleButton value="orange" onChange={this.handleColorInp}>Orange</ToggleButton>
-                                        <ToggleButton value="green"  onChange={this.handleColorInp}>Green</ToggleButton>
-                                        <ToggleButton value="blue"   onChange={this.handleColorInp}>blue</ToggleButton>
-                                        <ToggleButton value="red"    onChange={this.handleColorInp}>red</ToggleButton>
-                                        <ToggleButton value="pink"   onChange={this.handleColorInp}>pink</ToggleButton>
+                                        <ToggleButton value="yellow" onChange={this.handleColorInp} style={{color: 'purple'}}>Yellow</ToggleButton>
+                                        <ToggleButton value="orange" onChange={this.handleColorInp} style={{color: 'purple'}}>Orange</ToggleButton>
+                                        <ToggleButton value="green"  onChange={this.handleColorInp} style={{color: 'purple'}}>Green</ToggleButton>
+                                        <ToggleButton value="blue"   onChange={this.handleColorInp} style={{color: 'purple'}}>blue</ToggleButton>
+                                        <ToggleButton value="red"    onChange={this.handleColorInp} style={{color: 'purple'}}>red</ToggleButton>
+                                        <ToggleButton value="pink"   onChange={this.handleColorInp} style={{color: 'purple'}}>pink</ToggleButton>
                                     </ToggleButtonGroup>
                                 </ButtonToolbar>
                             </FormGroup>
                             {' '}
-                            <Button block="true" onClick={this.props.getTaskData}>
+                            <Button block="true" onClick={this.props.getTaskData} style={{color: 'purple'}}>
                                 Add
                             </Button>
                         </Form>

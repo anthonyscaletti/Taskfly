@@ -8827,7 +8827,7 @@ var AddTask = function (_React$Component) {
                     { className: 'col-md-4 col-md-offset-4' },
                     _react2.default.createElement(
                         'div',
-                        { style: { backgroundColor: 'white', borderStyle: 'solid', borderColor: 'green', marginBottom: '5%', padding: '2%' } },
+                        { style: { backgroundColor: 'white', borderStyle: 'solid', borderColor: '#CD9932', marginBottom: '5%', padding: '2%' } },
                         _react2.default.createElement(
                             _reactBootstrap.Form,
                             null,
@@ -8836,7 +8836,7 @@ var AddTask = function (_React$Component) {
                                 { controlId: 'taskMessage' },
                                 _react2.default.createElement(
                                     _reactBootstrap.ControlLabel,
-                                    null,
+                                    { style: { color: 'purple' } },
                                     'Add Task'
                                 ),
                                 ' ',
@@ -8848,7 +8848,7 @@ var AddTask = function (_React$Component) {
                                 { controlId: 'taskColor' },
                                 _react2.default.createElement(
                                     _reactBootstrap.ControlLabel,
-                                    null,
+                                    { style: { color: 'purple' } },
                                     'Select Color'
                                 ),
                                 ' ',
@@ -8860,32 +8860,32 @@ var AddTask = function (_React$Component) {
                                         { type: 'radio', name: 'options', defaultValue: 'yellow' },
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { value: 'yellow', onChange: this.handleColorInp },
+                                            { value: 'yellow', onChange: this.handleColorInp, style: { color: 'purple' } },
                                             'Yellow'
                                         ),
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { value: 'orange', onChange: this.handleColorInp },
+                                            { value: 'orange', onChange: this.handleColorInp, style: { color: 'purple' } },
                                             'Orange'
                                         ),
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { value: 'green', onChange: this.handleColorInp },
+                                            { value: 'green', onChange: this.handleColorInp, style: { color: 'purple' } },
                                             'Green'
                                         ),
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { value: 'blue', onChange: this.handleColorInp },
+                                            { value: 'blue', onChange: this.handleColorInp, style: { color: 'purple' } },
                                             'blue'
                                         ),
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { value: 'red', onChange: this.handleColorInp },
+                                            { value: 'red', onChange: this.handleColorInp, style: { color: 'purple' } },
                                             'red'
                                         ),
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { value: 'pink', onChange: this.handleColorInp },
+                                            { value: 'pink', onChange: this.handleColorInp, style: { color: 'purple' } },
                                             'pink'
                                         )
                                     )
@@ -8894,7 +8894,7 @@ var AddTask = function (_React$Component) {
                             ' ',
                             _react2.default.createElement(
                                 _reactBootstrap.Button,
-                                { block: 'true', onClick: this.props.getTaskData },
+                                { block: 'true', onClick: this.props.getTaskData, style: { color: 'purple' } },
                                 'Add'
                             )
                         )
@@ -26284,7 +26284,7 @@ var Navigation = function (_Component) {
                 null,
                 _react2.default.createElement(
                     _reactBootstrap.Navbar,
-                    { style: { backgroundColor: 'skyblue' } },
+                    { style: { backgroundColor: '#CD9932' } },
                     _react2.default.createElement(
                         _reactBootstrap.Navbar.Header,
                         null,
@@ -38266,7 +38266,7 @@ var TrafficControl = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (TrafficControl.__proto__ || Object.getPrototypeOf(TrafficControl)).call(this, props));
 
         _this.state = {
-            tasksStage1: [{ msg: "task 1", color: "yellow", status: 1 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 1 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }],
+            tasksStage1: [{ msg: "task 1 is a pain in my butt what to do next", color: "yellow", status: 1 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 1 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }],
             tasksStage2: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }],
             tasksStage3: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }],
             addition: props.addition,
@@ -38415,7 +38415,7 @@ var CategoryBox = function (_React$Component) {
 
             return _react2.default.createElement(
                 'div',
-                { style: { backgroundColor: 'white', borderStyle: 'solid', borderColor: 'yellow', height: '80vh' } },
+                { style: { backgroundColor: 'white', borderStyle: 'solid', borderColor: '#CD9932', height: '80vh' } },
                 _react2.default.createElement(_category2.default, { name: this.props.categoryName }),
                 _react2.default.createElement(
                     'div',
