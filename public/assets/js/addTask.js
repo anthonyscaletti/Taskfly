@@ -49,7 +49,7 @@ class AddTask extends React.Component{
                                 </ButtonToolbar>
                             </FormGroup>
                             {' '}
-                            <Button block="true" onClick={this.props.getTaskData} style={{color: 'purple'}}>
+                            <Button block="true" onClick={() => this.props.getTaskData(this.state.msg, this.state.color)} style={{color: 'purple'}}>
                                 Add
                             </Button>
                         </Form>

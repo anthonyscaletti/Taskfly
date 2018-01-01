@@ -8819,6 +8819,8 @@ var AddTask = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             return _react2.default.createElement(
                 'div',
                 { className: 'row' },
@@ -8894,7 +8896,9 @@ var AddTask = function (_React$Component) {
                             ' ',
                             _react2.default.createElement(
                                 _reactBootstrap.Button,
-                                { block: 'true', onClick: this.props.getTaskData, style: { color: 'purple' } },
+                                { block: 'true', onClick: function onClick() {
+                                        return _this2.props.getTaskData(_this2.state.msg, _this2.state.color);
+                                    }, style: { color: 'purple' } },
                                 'Add'
                             )
                         )
@@ -38274,6 +38278,7 @@ var TrafficControl = function (_React$Component) {
 
         };
         _this.handleClick = _this.handleClick.bind(_this);
+        _this.getTaskData = _this.getTaskData.bind(_this);
         return _this;
     }
 
@@ -38299,8 +38304,18 @@ var TrafficControl = function (_React$Component) {
 
             if (category == "Tasks") {
                 if (newState1[index]["status"]) {
+                    var i;
+
                     newState1[index]["status"] = 0;
-                    newState2[index]["status"] = 1;
+
+                    for (i = 0; i < newState2.length; ++i) {
+                        if (newState2[i]["status"] == 0) {
+                            newState2[i]["msg"] = newState1[index]["msg"];
+                            newState2[i]["color"] = newState1[index]["color"];
+                            newState2[i]["status"] = 1;
+                            break;
+                        }
+                    }
 
                     this.setState({
                         tasksStage1: newState1,
@@ -38309,8 +38324,18 @@ var TrafficControl = function (_React$Component) {
                 }
             } else if (category == "Working") {
                 if (newState2[index]["status"]) {
+                    var i;
+
                     newState2[index]["status"] = 0;
-                    newState3[index]["status"] = 1;
+
+                    for (i = 0; i < newState3.length; ++i) {
+                        if (newState3[i]["status"] == 0) {
+                            newState3[i]["msg"] = newState2[index]["msg"];
+                            newState3[i]["color"] = newState2[index]["color"];
+                            newState3[i]["status"] = 1;
+                            break;
+                        }
+                    }
 
                     this.setState({
                         tasksStage2: newState2,
@@ -38326,6 +38351,25 @@ var TrafficControl = function (_React$Component) {
                     });
                 }
             }
+        }
+    }, {
+        key: 'getTaskData',
+        value: function getTaskData(msg, color) {
+            var newState1 = this.state.tasksStage1;
+            var i;
+
+            for (i = 0; i < newState1.length; ++i) {
+                if (newState1[i]["status"] == 0) {
+                    newState1[i]["msg"] = msg;
+                    newState1[i]["color"] = color;
+                    newState1[i]["status"] = 1;
+                    break;
+                }
+            }
+
+            this.setState({
+                taskStage1: newState1
+            });
         }
     }, {
         key: 'render',
@@ -38355,7 +38399,7 @@ var TrafficControl = function (_React$Component) {
                     )
                 );
             } else {
-                return _react2.default.createElement(_addTask2.default, null);
+                return _react2.default.createElement(_addTask2.default, { getTaskData: this.getTaskData });
             }
         }
     }]);

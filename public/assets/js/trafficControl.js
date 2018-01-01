@@ -33,6 +33,7 @@ class TrafficControl extends React.Component{
 
         }
         this.handleClick = this.handleClick.bind(this);
+        this.getTaskData = this.getTaskData.bind(this);
     }
 
     componentWillReceiveProps(nextProps){
@@ -75,8 +76,19 @@ class TrafficControl extends React.Component{
         {
             if(newState1[index]["status"])
             {
+                var i;
+
                 newState1[index]["status"] = 0;
-                newState2[index]["status"] = 1;
+
+                for(i = 0; i < newState2.length; ++i){
+                    if(newState2[i]["status"] == 0)
+                    {
+                        newState2[i]["msg"] = newState1[index]["msg"];
+                        newState2[i]["color"] = newState1[index]["color"];
+                        newState2[i]["status"] = 1;
+                        break;
+                    }
+                }
 
                 this.setState({
                     tasksStage1: newState1,
@@ -88,8 +100,19 @@ class TrafficControl extends React.Component{
         {
             if(newState2[index]["status"])
             {
+                var i;
+
                 newState2[index]["status"] = 0;
-                newState3[index]["status"] = 1;
+
+                for(i = 0; i < newState3.length; ++i){
+                    if(newState3[i]["status"] == 0)
+                    {
+                        newState3[i]["msg"] = newState2[index]["msg"];
+                        newState3[i]["color"] = newState2[index]["color"];
+                        newState3[i]["status"] = 1;
+                        break;
+                    }
+                }
 
                 this.setState({
                     tasksStage2: newState2,
@@ -109,6 +132,28 @@ class TrafficControl extends React.Component{
             }
         }
     }
+
+    getTaskData(msg, color)
+    {
+        var newState1 = this.state.tasksStage1;
+        var i;
+
+        for(i = 0; i < newState1.length; ++i){
+            if(newState1[i]["status"] == 0)
+            {
+                newState1[i]["msg"] = msg;
+                newState1[i]["color"] = color;
+                newState1[i]["status"] = 1;
+                break;
+            }
+        }
+
+        this.setState({
+            taskStage1: newState1
+        });
+
+    }
+
     render()
     {
         if(this.state.addition == 0)
@@ -132,7 +177,7 @@ class TrafficControl extends React.Component{
         else
         {
             return(
-                <AddTask />
+                <AddTask getTaskData={this.getTaskData}/>
             );
         }
     }
