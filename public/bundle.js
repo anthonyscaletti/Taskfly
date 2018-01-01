@@ -8829,7 +8829,7 @@ var AddTask = function (_React$Component) {
                     { className: 'col-md-4 col-md-offset-4' },
                     _react2.default.createElement(
                         'div',
-                        { style: { backgroundColor: 'white', borderStyle: 'solid', borderColor: '#CD9932', marginBottom: '5%', padding: '2%' } },
+                        { style: { backgroundColor: 'white', borderStyle: 'solid', borderColor: '#D2A347', marginBottom: '5%', padding: '2%' } },
                         _react2.default.createElement(
                             _reactBootstrap.Form,
                             null,
@@ -26289,7 +26289,7 @@ var Navigation = function (_Component) {
                 null,
                 _react2.default.createElement(
                     _reactBootstrap.Navbar,
-                    { style: { backgroundColor: '#CD9932' } },
+                    { style: { backgroundColor: '#D2A347' } },
                     _react2.default.createElement(
                         _reactBootstrap.Navbar.Header,
                         null,
@@ -38463,7 +38463,7 @@ var CategoryBox = function (_React$Component) {
 
             return _react2.default.createElement(
                 'div',
-                { style: { backgroundColor: 'white', borderStyle: 'solid', borderColor: '#CD9932', height: '80vh' } },
+                { style: { backgroundColor: 'white', borderStyle: 'solid', borderColor: '#D2A347', height: '80vh' } },
                 _react2.default.createElement(_category2.default, { name: this.props.categoryName }),
                 _react2.default.createElement(
                     'div',

@@ -26,7 +26,7 @@ class AddTask extends React.Component{
         return(
             <div className="row">
                 <div className="col-md-4 col-md-offset-4">
-                    <div style={{backgroundColor: 'white', borderStyle: 'solid', borderColor: '#CD9932', marginBottom: '5%', padding: '2%'}}>
+                    <div style={{backgroundColor: 'white', borderStyle: 'solid', borderColor: '#D2A347', marginBottom: '5%', padding: '2%'}}>
                         <Form>
                             <FormGroup controlId="taskMessage">
                                 <ControlLabel style={{color: 'purple'}}>Add Task</ControlLabel>

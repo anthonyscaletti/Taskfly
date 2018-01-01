@@ -12,7 +12,7 @@ class Navigation extends Component{
     render(){
         return(
             <div>
-                <Navbar style={{backgroundColor: '#CD9932'}}>
+                <Navbar style={{backgroundColor: '#D2A347'}}>
                         <Navbar.Header>
                             <Navbar.Brand>
                                 <img id="logoNav" src="./assets/logo.png" alt="logo" />
