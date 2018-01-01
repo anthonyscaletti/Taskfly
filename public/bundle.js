@@ -38257,9 +38257,9 @@ var TrafficControl = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (TrafficControl.__proto__ || Object.getPrototypeOf(TrafficControl)).call(this, props));
 
         _this.state = {
-            tasksStage1: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }],
-            tasksStage2: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }],
-            tasksStage3: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }],
+            tasksStage1: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }, { msg: "task 9", color: "yellow", status: 0 }],
+            tasksStage2: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }, { msg: "task 9", color: "yellow", status: 0 }],
+            tasksStage3: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }, { msg: "task 9", color: "yellow", status: 0 }],
             addition: props.addition,
             reset: props.reset
 
@@ -38276,9 +38276,9 @@ var TrafficControl = function (_React$Component) {
 
             if (nextProps.reset == 1) {
                 this.setState({
-                    tasksStage1: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }],
-                    tasksStage2: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }],
-                    tasksStage3: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }]
+                    tasksStage1: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }, { msg: "task 9", color: "yellow", status: 0 }],
+                    tasksStage2: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }, { msg: "task 9", color: "yellow", status: 0 }],
+                    tasksStage3: [{ msg: "task 1", color: "yellow", status: 0 }, { msg: "task 2", color: "yellow", status: 0 }, { msg: "task 3", color: "yellow", status: 0 }, { msg: "task 4", color: "yellow", status: 0 }, { msg: "task 5", color: "yellow", status: 0 }, { msg: "task 6", color: "yellow", status: 0 }, { msg: "task 7", color: "yellow", status: 0 }, { msg: "task 8", color: "yellow", status: 0 }, { msg: "task 9", color: "yellow", status: 0 }]
                 });
             }
         }
@@ -38517,6 +38517,31 @@ var CategoryBox = function (_React$Component) {
                                 return _this2.props.handler(5, _this2.props.categoryName);
                             } },
                         _react2.default.createElement(_note2.default, { message: this.props.tasks[5]["msg"], color: this.props.tasks[5]["color"], status: this.props.tasks[5]["status"] })
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'row', style: { padding: "5%" } },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'col-md-4', onClick: function onClick() {
+                                return _this2.props.handler(6, _this2.props.categoryName);
+                            } },
+                        _react2.default.createElement(_note2.default, { message: this.props.tasks[6]["msg"], color: this.props.tasks[6]["color"], status: this.props.tasks[6]["status"] })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'col-md-4', onClick: function onClick() {
+                                return _this2.props.handler(7, _this2.props.categoryName);
+                            } },
+                        _react2.default.createElement(_note2.default, { message: this.props.tasks[7]["msg"], color: this.props.tasks[7]["color"], status: this.props.tasks[7]["status"] })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'col-md-4', onClick: function onClick() {
+                                return _this2.props.handler(8, _this2.props.categoryName);
+                            } },
+                        _react2.default.createElement(_note2.default, { message: this.props.tasks[8]["msg"], color: this.props.tasks[8]["color"], status: this.props.tasks[8]["status"] })
                     )
                 )
             );
