@@ -76,9 +76,8 @@ class TrafficControl extends React.Component{
         {
             if(newState1[index]["status"])
             {
+                var tasksFull = true;
                 var i;
-
-                newState1[index]["status"] = 0;
 
                 for(i = 0; i < newState2.length; ++i){
                     if(newState2[i]["status"] == 0)
@@ -86,23 +85,32 @@ class TrafficControl extends React.Component{
                         newState2[i]["msg"] = newState1[index]["msg"];
                         newState2[i]["color"] = newState1[index]["color"];
                         newState2[i]["status"] = 1;
+                        tasksFull = false;
                         break;
                     }
                 }
 
-                this.setState({
-                    tasksStage1: newState1,
-                    tasksStage2: newState2
-                });
+                if(tasksFull)
+                {
+                    alert("Working on Too Many Tasks Already")
+                }
+                else
+                {
+                    newState1[index]["status"] = 0;
+
+                    this.setState({
+                        tasksStage1: newState1,
+                        tasksStage2: newState2
+                    });
+                }
             }
         }
         else if (category == "Working")
         {
             if(newState2[index]["status"])
             {
+                var tasksFull = true;
                 var i;
-
-                newState2[index]["status"] = 0;
 
                 for(i = 0; i < newState3.length; ++i){
                     if(newState3[i]["status"] == 0)
@@ -110,14 +118,24 @@ class TrafficControl extends React.Component{
                         newState3[i]["msg"] = newState2[index]["msg"];
                         newState3[i]["color"] = newState2[index]["color"];
                         newState3[i]["status"] = 1;
+                        tasksFull = false;
                         break;
                     }
                 }
 
-                this.setState({
-                    tasksStage2: newState2,
-                    tasksStage3: newState3
-                });
+                if(tasksFull)
+                {
+                    alert("Delete a Completed Task")
+                }
+                else
+                {
+                    newState2[index]["status"] = 0;
+                    
+                    this.setState({
+                        tasksStage2: newState2,
+                        tasksStage3: newState3
+                    });
+                }
             }
         }
         else
@@ -136,11 +154,12 @@ class TrafficControl extends React.Component{
     getTaskData(msg, color)
     {
         var newState1 = this.state.tasksStage1;
+        var tasksFull = true;
         var i;
 
         if(msg.length > 126)
         {
-            alert("Over");
+            alert("Task Description Too Long, Has Been Sliced in PostIt");
             msg = msg.substr(0,126);
         }
 
@@ -150,13 +169,20 @@ class TrafficControl extends React.Component{
                 newState1[i]["msg"] = msg;
                 newState1[i]["color"] = color;
                 newState1[i]["status"] = 1;
+                tasksFull = false;
                 break;
             }
         }
-
-        this.setState({
-            taskStage1: newState1
-        });
+        if(tasksFull)
+        {
+            alert("Task List is Full")
+        }
+        else
+        {
+            this.setState({
+                taskStage1: newState1
+            });
+        }
 
     }
 

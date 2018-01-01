@@ -26285,58 +26285,45 @@ var Navigation = function (_Component) {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                'div',
-                null,
+                _reactBootstrap.Navbar,
+                { style: { backgroundColor: '#D2A347' }, fluid: 'true' },
                 _react2.default.createElement(
-                    _reactBootstrap.Navbar,
-                    { style: { backgroundColor: '#D2A347' } },
+                    _reactBootstrap.Navbar.Header,
+                    null,
                     _react2.default.createElement(
-                        _reactBootstrap.Navbar.Header,
+                        _reactBootstrap.Navbar.Brand,
+                        null,
+                        _react2.default.createElement('img', { id: 'logoNav', src: './assets/logo.png', alt: 'logo' })
+                    ),
+                    _react2.default.createElement(
+                        _reactBootstrap.Navbar.Brand,
                         null,
                         _react2.default.createElement(
-                            _reactBootstrap.Navbar.Brand,
-                            null,
-                            _react2.default.createElement('img', { id: 'logoNav', src: './assets/logo.png', alt: 'logo' })
-                        ),
+                            'span',
+                            { style: { color: 'purple' } },
+                            'Taskfly'
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    _reactBootstrap.Nav,
+                    { pullRight: true },
+                    _react2.default.createElement(
+                        _reactBootstrap.NavItem,
+                        { onClick: this.props.resetTasks },
                         _react2.default.createElement(
-                            _reactBootstrap.Navbar.Brand,
-                            null,
-                            _react2.default.createElement(
-                                'span',
-                                { style: { color: 'purple' } },
-                                'Taskfly'
-                            )
+                            'span',
+                            { style: { color: 'purple' } },
+                            'Reset'
                         )
                     ),
                     _react2.default.createElement(
-                        _reactBootstrap.Nav,
-                        { pullRight: true },
+                        _reactBootstrap.NavItem,
+                        { onClick: this.props.addTask },
                         _react2.default.createElement(
-                            _reactBootstrap.NavItem,
-                            { eventKey: 1, href: '#' },
-                            _react2.default.createElement(
-                                'span',
-                                { style: { color: 'purple' } },
-                                'New'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            _reactBootstrap.NavItem,
-                            { eventKey: 2, onClick: this.props.resetTasks },
-                            _react2.default.createElement(
-                                'span',
-                                { style: { color: 'purple' } },
-                                'Reset'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            _reactBootstrap.NavItem,
-                            { eventKey: 3, onClick: this.props.addTask },
-                            _react2.default.createElement(
-                                'span',
-                                { style: { color: 'purple' } },
-                                'Add Task'
-                            )
+                            'span',
+                            { style: { color: 'purple' } },
+                            'Add Task'
                         )
                     )
                 )
@@ -38304,43 +38291,55 @@ var TrafficControl = function (_React$Component) {
 
             if (category == "Tasks") {
                 if (newState1[index]["status"]) {
+                    var tasksFull = true;
                     var i;
-
-                    newState1[index]["status"] = 0;
 
                     for (i = 0; i < newState2.length; ++i) {
                         if (newState2[i]["status"] == 0) {
                             newState2[i]["msg"] = newState1[index]["msg"];
                             newState2[i]["color"] = newState1[index]["color"];
                             newState2[i]["status"] = 1;
+                            tasksFull = false;
                             break;
                         }
                     }
 
-                    this.setState({
-                        tasksStage1: newState1,
-                        tasksStage2: newState2
-                    });
+                    if (tasksFull) {
+                        alert("Working on Too Many Tasks Already");
+                    } else {
+                        newState1[index]["status"] = 0;
+
+                        this.setState({
+                            tasksStage1: newState1,
+                            tasksStage2: newState2
+                        });
+                    }
                 }
             } else if (category == "Working") {
                 if (newState2[index]["status"]) {
+                    var tasksFull = true;
                     var i;
-
-                    newState2[index]["status"] = 0;
 
                     for (i = 0; i < newState3.length; ++i) {
                         if (newState3[i]["status"] == 0) {
                             newState3[i]["msg"] = newState2[index]["msg"];
                             newState3[i]["color"] = newState2[index]["color"];
                             newState3[i]["status"] = 1;
+                            tasksFull = false;
                             break;
                         }
                     }
 
-                    this.setState({
-                        tasksStage2: newState2,
-                        tasksStage3: newState3
-                    });
+                    if (tasksFull) {
+                        alert("Delete a Completed Task");
+                    } else {
+                        newState2[index]["status"] = 0;
+
+                        this.setState({
+                            tasksStage2: newState2,
+                            tasksStage3: newState3
+                        });
+                    }
                 }
             } else {
                 if (newState3[index]["status"]) {
@@ -38356,10 +38355,11 @@ var TrafficControl = function (_React$Component) {
         key: 'getTaskData',
         value: function getTaskData(msg, color) {
             var newState1 = this.state.tasksStage1;
+            var tasksFull = true;
             var i;
 
             if (msg.length > 126) {
-                alert("Over");
+                alert("Task Description Too Long, Has Been Sliced in PostIt");
                 msg = msg.substr(0, 126);
             }
 
@@ -38368,13 +38368,17 @@ var TrafficControl = function (_React$Component) {
                     newState1[i]["msg"] = msg;
                     newState1[i]["color"] = color;
                     newState1[i]["status"] = 1;
+                    tasksFull = false;
                     break;
                 }
             }
-
-            this.setState({
-                taskStage1: newState1
-            });
+            if (tasksFull) {
+                alert("Task List is Full");
+            } else {
+                this.setState({
+                    taskStage1: newState1
+                });
+            }
         }
     }, {
         key: 'render',
