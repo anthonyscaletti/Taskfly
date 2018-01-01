@@ -7,32 +7,26 @@ class TrafficControl extends React.Component{
     {
         super(props);
         this.state = {
-            tasksStage1: [{msg: "task 1", color: "yellow", status: 1},
+            tasksStage1: [{msg: "task 1", color: "yellow", status: 0},
                           {msg: "task 2", color: "yellow", status: 0},
-                          {msg: "task 3", color: "yellow", status: 1},
+                          {msg: "task 3", color: "yellow", status: 0},
                           {msg: "task 4", color: "yellow", status: 0},
                           {msg: "task 5", color: "yellow", status: 0},
-                          {msg: "task 6", color: "yellow", status: 0},
-                          {msg: "task 7", color: "yellow", status: 0},
-                          {msg: "task 8", color: "yellow", status: 0}
+                          {msg: "task 6", color: "yellow", status: 0}
                          ],
             tasksStage2: [{msg: "task 1", color: "yellow", status: 0},
                           {msg: "task 2", color: "yellow", status: 0},
                           {msg: "task 3", color: "yellow", status: 0},
                           {msg: "task 4", color: "yellow", status: 0},
                           {msg: "task 5", color: "yellow", status: 0},
-                          {msg: "task 6", color: "yellow", status: 0},
-                          {msg: "task 7", color: "yellow", status: 0},
-                          {msg: "task 8", color: "yellow", status: 0}
+                          {msg: "task 6", color: "yellow", status: 0}
                          ],
             tasksStage3: [{msg: "task 1", color: "yellow", status: 0},
                           {msg: "task 2", color: "yellow", status: 0},
                           {msg: "task 3", color: "yellow", status: 0},
                           {msg: "task 4", color: "yellow", status: 0},
                           {msg: "task 5", color: "yellow", status: 0},
-                          {msg: "task 6", color: "yellow", status: 0},
-                          {msg: "task 7", color: "yellow", status: 0},
-                          {msg: "task 8", color: "yellow", status: 0}
+                          {msg: "task 6", color: "yellow", status: 0}
                          ],
             addition: props.addition,
             reset: props.reset
@@ -52,29 +46,22 @@ class TrafficControl extends React.Component{
                               {msg: "task 3", color: "yellow", status: 0},
                               {msg: "task 4", color: "yellow", status: 0},
                               {msg: "task 5", color: "yellow", status: 0},
-                              {msg: "task 6", color: "yellow", status: 0},
-                              {msg: "task 7", color: "yellow", status: 0},
-                              {msg: "task 8", color: "yellow", status: 0}
+                              {msg: "task 6", color: "yellow", status: 0}
                              ],
                 tasksStage2: [{msg: "task 1", color: "yellow", status: 0},
                               {msg: "task 2", color: "yellow", status: 0},
                               {msg: "task 3", color: "yellow", status: 0},
                               {msg: "task 4", color: "yellow", status: 0},
                               {msg: "task 5", color: "yellow", status: 0},
-                              {msg: "task 6", color: "yellow", status: 0},
-                              {msg: "task 7", color: "yellow", status: 0},
-                              {msg: "task 8", color: "yellow", status: 0}
+                              {msg: "task 6", color: "yellow", status: 0}
                              ],
                 tasksStage3: [{msg: "task 1", color: "yellow", status: 0},
                               {msg: "task 2", color: "yellow", status: 0},
                               {msg: "task 3", color: "yellow", status: 0},
                               {msg: "task 4", color: "yellow", status: 0},
                               {msg: "task 5", color: "yellow", status: 0},
-                              {msg: "task 6", color: "yellow", status: 0},
-                              {msg: "task 7", color: "yellow", status: 0},
-                              {msg: "task 8", color: "yellow", status: 0}
+                              {msg: "task 6", color: "yellow", status: 0}
                              ]
-
             });
         }
     }
