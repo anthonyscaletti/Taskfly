@@ -138,6 +138,12 @@ class TrafficControl extends React.Component{
         var newState1 = this.state.tasksStage1;
         var i;
 
+        if(msg.length > 126)
+        {
+            alert("Over");
+            msg = msg.substr(0,126);
+        }
+
         for(i = 0; i < newState1.length; ++i){
             if(newState1[i]["status"] == 0)
             {

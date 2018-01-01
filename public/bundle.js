@@ -38358,6 +38358,11 @@ var TrafficControl = function (_React$Component) {
             var newState1 = this.state.tasksStage1;
             var i;
 
+            if (msg.length > 126) {
+                alert("Over");
+                msg = msg.substr(0, 126);
+            }
+
             for (i = 0; i < newState1.length; ++i) {
                 if (newState1[i]["status"] == 0) {
                     newState1[i]["msg"] = msg;
@@ -38621,7 +38626,7 @@ var Note = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            var style = { backgroundColor: this.state.color, color: 'black', width: '100%', height: '15vh', padding: '6%', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)' };
+            var style = { backgroundColor: this.state.color, color: 'black', width: '100%', height: '15vh', padding: '6%', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)', overflowWrap: 'break-word' };
 
             if (this.state.status == 1) {
                 return _react2.default.createElement(
