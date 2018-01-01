@@ -19,7 +19,7 @@ class Note extends React.Component{
     }
 
     render(){
-        var style = {backgroundColor: this.state.color, color: 'black', width: '100%', height: '10vh', padding: '6%', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'};
+        var style = {backgroundColor: this.state.color, color: 'black', width: '100%', height: '15vh', padding: '6%', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'};
 
         if(this.state.status == 1)
         {
@@ -30,7 +30,7 @@ class Note extends React.Component{
             );
         }
         else
-            return(<div style={{backgroundColor: 'white', color: 'white', width: '100%', height: '10vh'}}>
+            return(<div style={{backgroundColor: 'white', color: 'white', width: '100%', height: '15vh'}}>
 
             </div>);
 
