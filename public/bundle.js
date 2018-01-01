@@ -8930,6 +8930,10 @@ var _navigation = __webpack_require__(148);
 
 var _navigation2 = _interopRequireDefault(_navigation);
 
+var _trafficControl = __webpack_require__(290);
+
+var _trafficControl2 = _interopRequireDefault(_trafficControl);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -8941,19 +8945,42 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Frontend = function (_React$Component) {
     _inherits(Frontend, _React$Component);
 
-    function Frontend() {
+    function Frontend(props) {
         _classCallCheck(this, Frontend);
 
-        return _possibleConstructorReturn(this, (Frontend.__proto__ || Object.getPrototypeOf(Frontend)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Frontend.__proto__ || Object.getPrototypeOf(Frontend)).call(this, props));
+
+        _this.state = {
+            addition: 0,
+            reset: 0
+        };
+        _this.addTask = _this.addTask.bind(_this);
+        _this.resetTasks = _this.resetTasks.bind(_this);
+        return _this;
     }
 
     _createClass(Frontend, [{
+        key: 'addTask',
+        value: function addTask() {
+            var _this2 = this;
+
+            this.setState(function (prevState) {
+                _this2.setState({ addition: !prevState.addition, reset: 0 });
+            });
+        }
+    }, {
+        key: 'resetTasks',
+        value: function resetTasks() {
+            this.setState({ reset: 1 });
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_navigation2.default, null)
+                _react2.default.createElement(_navigation2.default, { addTask: this.addTask, resetTasks: this.resetTasks }),
+                _react2.default.createElement(_trafficControl2.default, { addition: this.state.addition, reset: this.state.reset })
             );
         }
     }]);
@@ -26229,10 +26256,6 @@ var _addTask = __webpack_require__(136);
 
 var _addTask2 = _interopRequireDefault(_addTask);
 
-var _trafficControl = __webpack_require__(290);
-
-var _trafficControl2 = _interopRequireDefault(_trafficControl);
-
 var _reactDom = __webpack_require__(12);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
@@ -26251,32 +26274,10 @@ var Navigation = function (_Component) {
     function Navigation(props) {
         _classCallCheck(this, Navigation);
 
-        var _this = _possibleConstructorReturn(this, (Navigation.__proto__ || Object.getPrototypeOf(Navigation)).call(this, props));
-
-        _this.state = {
-            addition: 0,
-            reset: 0
-        };
-        _this.addTask = _this.addTask.bind(_this);
-        _this.resetTasks = _this.resetTasks.bind(_this);
-        return _this;
+        return _possibleConstructorReturn(this, (Navigation.__proto__ || Object.getPrototypeOf(Navigation)).call(this, props));
     }
 
     _createClass(Navigation, [{
-        key: 'addTask',
-        value: function addTask() {
-            var _this2 = this;
-
-            this.setState(function (prevState) {
-                _this2.setState({ addition: !prevState.addition, reset: 0 });
-            });
-        }
-    }, {
-        key: 'resetTasks',
-        value: function resetTasks() {
-            this.setState({ reset: 1 });
-        }
-    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
@@ -26317,7 +26318,7 @@ var Navigation = function (_Component) {
                         ),
                         _react2.default.createElement(
                             _reactBootstrap.NavItem,
-                            { eventKey: 2, onClick: this.resetTasks },
+                            { eventKey: 2, onClick: this.props.resetTasks },
                             _react2.default.createElement(
                                 'span',
                                 { style: { color: 'purple' } },
@@ -26326,7 +26327,7 @@ var Navigation = function (_Component) {
                         ),
                         _react2.default.createElement(
                             _reactBootstrap.NavItem,
-                            { eventKey: 3, onClick: this.addTask },
+                            { eventKey: 3, onClick: this.props.addTask },
                             _react2.default.createElement(
                                 'span',
                                 { style: { color: 'purple' } },
@@ -26334,8 +26335,7 @@ var Navigation = function (_Component) {
                             )
                         )
                     )
-                ),
-                _react2.default.createElement(_trafficControl2.default, { addition: this.state.addition, reset: this.state.reset })
+                )
             );
         }
     }]);
