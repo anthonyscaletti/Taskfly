@@ -38358,9 +38358,9 @@ var TrafficControl = function (_React$Component) {
             var tasksFull = true;
             var i;
 
-            if (msg.length > 126) {
+            if (msg.length > 25) {
                 alert("Task Description Too Long, Has Been Sliced in PostIt");
-                msg = msg.substr(0, 126);
+                msg = msg.substr(0, 25);
             }
 
             for (i = 0; i < newState1.length; ++i) {
