@@ -16,4 +16,4 @@ app.use(express.static('public'));
 //Router engine
 router(app);
 //Run server
-runServer(app, 3000);
+runServer(app, process.env.PORT || 5000);
