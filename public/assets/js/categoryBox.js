@@ -10,7 +10,7 @@ class CategoryBox extends React.Component{
 
     render(){
         return(
-            <div style={{backgroundColor: 'white', borderStyle: 'solid', borderColor: '#D2A347', height: '80vh'}}>
+            <div style={{backgroundColor: 'white', borderStyle: 'solid', borderColor: '#320B86', height: '80vh'}}>
                 <Category name={this.props.categoryName} />
                 <div className="row" style={{padding: "5%"}}>
                     <div className="col-md-4" onClick={() => this.props.handler(0, this.props.categoryName)}>

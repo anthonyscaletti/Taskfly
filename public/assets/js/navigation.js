@@ -11,18 +11,18 @@ class Navigation extends Component{
 
     render(){
         return(
-            <Navbar style={{backgroundColor: '#D2A347'}} fluid="true">
+            <Navbar style={{backgroundColor: '#320B86'}} fluid="true">
                     <Navbar.Header>
                         <Navbar.Brand>
                             <img id="logoNav" src="./assets/logo.png" alt="logo"/>
                         </Navbar.Brand>
                         <Navbar.Brand>
-                            <span className="romanHeader" style={{color: 'purple'}}>Taskfly</span>
+                            <span className="romanHeader" style={{color: '#FFFFFF'}}>Taskfly</span>
                         </Navbar.Brand>
                     </Navbar.Header>
                     <Nav pullRight>
-                        <NavItem onClick={this.props.resetTasks}><span className="romanNavItems" style={{color: 'purple'}}>Reset</span></NavItem>
-                        <NavItem onClick={this.props.addTask}><span className="romanNavItems" style={{color: 'purple'}}>Add Task</span></NavItem>
+                        <NavItem onClick={this.props.resetTasks}><span className="romanNavItems" style={{color: '#FFFFFF'}}>Reset</span></NavItem>
+                        <NavItem onClick={this.props.addTask}><span className="romanNavItems" style={{color: '#FFFFFF'}}>Add Task</span></NavItem>
                     </Nav>
             </Navbar>
         );

@@ -8829,7 +8829,7 @@ var AddTask = function (_React$Component) {
                     { className: 'col-md-4 col-md-offset-4' },
                     _react2.default.createElement(
                         'div',
-                        { style: { backgroundColor: 'white', borderStyle: 'solid', borderColor: '#D2A347', marginBottom: '5%', padding: '2%' } },
+                        { style: { backgroundColor: 'white', borderStyle: 'solid', borderColor: '#320B86', marginBottom: '5%', padding: '2%' } },
                         _react2.default.createElement(
                             _reactBootstrap.Form,
                             null,
@@ -8838,7 +8838,7 @@ var AddTask = function (_React$Component) {
                                 { controlId: 'taskMessage' },
                                 _react2.default.createElement(
                                     _reactBootstrap.ControlLabel,
-                                    { className: 'romanText', style: { color: 'purple' } },
+                                    { className: 'romanText' },
                                     'Add Task'
                                 ),
                                 ' ',
@@ -8850,7 +8850,7 @@ var AddTask = function (_React$Component) {
                                 { controlId: 'taskColor' },
                                 _react2.default.createElement(
                                     _reactBootstrap.ControlLabel,
-                                    { className: 'romanText', style: { color: 'purple' } },
+                                    { className: 'romanText' },
                                     'Select Color'
                                 ),
                                 ' ',
@@ -8862,32 +8862,32 @@ var AddTask = function (_React$Component) {
                                         { type: 'radio', name: 'options', defaultValue: 'yellow' },
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { className: 'romanText', value: 'yellow', onChange: this.handleColorInp, style: { color: 'purple' } },
+                                            { className: 'romanText', value: 'yellow', onChange: this.handleColorInp },
                                             'Yellow'
                                         ),
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { className: 'romanText', value: 'orange', onChange: this.handleColorInp, style: { color: 'purple' } },
+                                            { className: 'romanText', value: 'orange', onChange: this.handleColorInp },
                                             'Orange'
                                         ),
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { className: 'romanText', value: '#98FB98', onChange: this.handleColorInp, style: { color: 'purple' } },
+                                            { className: 'romanText', value: '#98FB98', onChange: this.handleColorInp },
                                             'Green'
                                         ),
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { className: 'romanText', value: '#ADD8E6', onChange: this.handleColorInp, style: { color: 'purple' } },
+                                            { className: 'romanText', value: '#ADD8E6', onChange: this.handleColorInp },
                                             'Blue'
                                         ),
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { className: 'romanText', value: '#DA70D6', onChange: this.handleColorInp, style: { color: 'purple' } },
+                                            { className: 'romanText', value: '#DA70D6', onChange: this.handleColorInp },
                                             'Purple'
                                         ),
                                         _react2.default.createElement(
                                             _reactBootstrap.ToggleButton,
-                                            { className: 'romanText', value: 'pink', onChange: this.handleColorInp, style: { color: 'purple' } },
+                                            { className: 'romanText', value: 'pink', onChange: this.handleColorInp },
                                             'Pink'
                                         )
                                     )
@@ -8898,7 +8898,7 @@ var AddTask = function (_React$Component) {
                                 _reactBootstrap.Button,
                                 { block: 'true', onClick: function onClick() {
                                         return _this2.props.getTaskData(_this2.state.msg, _this2.state.color);
-                                    }, style: { color: 'purple' } },
+                                    } },
                                 'Add'
                             )
                         )
@@ -26286,7 +26286,7 @@ var Navigation = function (_Component) {
         value: function render() {
             return _react2.default.createElement(
                 _reactBootstrap.Navbar,
-                { style: { backgroundColor: '#D2A347' }, fluid: 'true' },
+                { style: { backgroundColor: '#320B86' }, fluid: 'true' },
                 _react2.default.createElement(
                     _reactBootstrap.Navbar.Header,
                     null,
@@ -26300,7 +26300,7 @@ var Navigation = function (_Component) {
                         null,
                         _react2.default.createElement(
                             'span',
-                            { className: 'romanHeader', style: { color: 'purple' } },
+                            { className: 'romanHeader', style: { color: '#FFFFFF' } },
                             'Taskfly'
                         )
                     )
@@ -26313,7 +26313,7 @@ var Navigation = function (_Component) {
                         { onClick: this.props.resetTasks },
                         _react2.default.createElement(
                             'span',
-                            { className: 'romanNavItems', style: { color: 'purple' } },
+                            { className: 'romanNavItems', style: { color: '#FFFFFF' } },
                             'Reset'
                         )
                     ),
@@ -26322,7 +26322,7 @@ var Navigation = function (_Component) {
                         { onClick: this.props.addTask },
                         _react2.default.createElement(
                             'span',
-                            { className: 'romanNavItems', style: { color: 'purple' } },
+                            { className: 'romanNavItems', style: { color: '#FFFFFF' } },
                             'Add Task'
                         )
                     )
@@ -38467,7 +38467,7 @@ var CategoryBox = function (_React$Component) {
 
             return _react2.default.createElement(
                 'div',
-                { style: { backgroundColor: 'white', borderStyle: 'solid', borderColor: '#D2A347', height: '80vh' } },
+                { style: { backgroundColor: 'white', borderStyle: 'solid', borderColor: '#320B86', height: '80vh' } },
                 _react2.default.createElement(_category2.default, { name: this.props.categoryName }),
                 _react2.default.createElement(
                     'div',
@@ -38592,7 +38592,7 @@ var Category = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                { className: 'text-center', style: { backgroundColor: 'white', borderStyle: 'solid', borderColor: 'purple', color: 'purple' } },
+                { className: 'text-center', style: { backgroundColor: '#E0E0E0', borderBottomStyle: 'solid', borderColor: '#320B86', color: '#000000' } },
                 _react2.default.createElement(
                     'span',
                     { className: 'romanCategory' },
