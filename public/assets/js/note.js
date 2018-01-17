@@ -30,7 +30,7 @@ class Note extends React.Component{
             );
         }
         else
-            return(<div style={{backgroundColor: 'white', color: 'white', width: '100%', height: '15vh'}}>
+            return(<div style={{backgroundColor: 'transparent', color: 'transparent', width: '100%', height: '15vh'}}>
 
             </div>);
 

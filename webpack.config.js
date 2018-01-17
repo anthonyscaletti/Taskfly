@@ -14,6 +14,11 @@ module.exports = {
                 query: {
                     presets: ['react', 'es2015']
                 }
+            },
+            {
+                test: /\.jpg$/,
+                loader: "url-loader",
+                query: { mimetype: "image/jpg" }
             }
         ]
     }

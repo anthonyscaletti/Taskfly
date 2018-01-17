@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Category from './category';
 import Note from './note';
+import image from '../corkBoardTex.jpg';
 
 class CategoryBox extends React.Component{
     constructor(props)
@@ -9,8 +10,10 @@ class CategoryBox extends React.Component{
     }
 
     render(){
+        const background = '../corkBoardTex.jpg';
+
         return(
-            <div style={{backgroundColor: 'white', borderStyle: 'solid', borderColor: '#320B86', height: '80vh'}}>
+            <div style={{backgroundImage: 'url('+image+')', borderStyle: 'groove', borderWidth: '15px', borderColor: '#855E42', height: '80vh'}}>
                 <Category name={this.props.categoryName} />
                 <div className="row" style={{padding: "5%"}}>
                     <div className="col-md-4" onClick={() => this.props.handler(0, this.props.categoryName)}>
