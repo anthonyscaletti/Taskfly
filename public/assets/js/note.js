@@ -25,7 +25,7 @@ class Note extends React.Component{
         {
             return(
                 <div style={style}>
-                    <span className="romanText">{this.state.message}</span>
+                    <span className="romanText" style={{fontSize: '1vw'}}>{this.state.message}</span>
                 </div>
             );
         }

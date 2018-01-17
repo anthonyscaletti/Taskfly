@@ -175,10 +175,10 @@ class TrafficControl extends React.Component{
         var tasksFull = true;
         var i;
 
-        if(msg.length > 25)
+        if(msg.length > 35)
         {
             alert("Task Description Too Long, Has Been Sliced in PostIt");
-            msg = msg.substr(0,25);
+            msg = msg.substr(0,35);
         }
 
         for(i = 0; i < newState1.length; ++i){

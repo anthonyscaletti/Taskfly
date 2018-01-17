@@ -38358,7 +38358,7 @@ var TrafficControl = function (_React$Component) {
             var tasksFull = true;
             var i;
 
-            if (msg.length > 25) {
+            if (msg.length > 100) {
                 alert("Task Description Too Long, Has Been Sliced in PostIt");
                 msg = msg.substr(0, 25);
             }
@@ -38673,7 +38673,7 @@ var Note = function (_React$Component) {
                     { style: style },
                     _react2.default.createElement(
                         'span',
-                        { className: 'romanText' },
+                        { className: 'romanText', style: { fontSize: '1vw' } },
                         this.state.message
                     )
                 );
