@@ -26293,7 +26293,7 @@ var Navigation = function (_Component) {
                     _react2.default.createElement(
                         _reactBootstrap.Navbar.Brand,
                         null,
-                        _react2.default.createElement('img', { id: 'logoNav', src: './assets/logo.png', alt: 'logo' })
+                        _react2.default.createElement('img', { id: 'logoNav', src: './assets/brandLogo.png', alt: 'logo' })
                     ),
                     _react2.default.createElement(
                         _reactBootstrap.Navbar.Brand,
