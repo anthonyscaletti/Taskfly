@@ -14,7 +14,7 @@ class Navigation extends Component{
             <Navbar style={{backgroundColor: '#320B86'}} fluid="true">
                     <Navbar.Header>
                         <Navbar.Brand>
-                            <img id="logoNav" src="./assets/logo.png" alt="logo"/>
+                            <img id="logoNav" src="./assets/brandLogo.png" alt="logo"/>
                         </Navbar.Brand>
                         <Navbar.Brand>
                             <span className="romanHeader" style={{color: '#FFFFFF'}}>Taskfly</span>
