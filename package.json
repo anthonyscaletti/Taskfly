@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "ejs": "^2.5.7",
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "express-enforces-ssl": "^1.1.0",
     "helmet": "^3.22.0",
     "react": "^16.2.0",
